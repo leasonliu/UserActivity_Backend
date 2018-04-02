@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - Web@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="Web">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="db_mystore"/>
+    <schema id="4" parent="1" name="FinalProject"/>
+    <schema id="5" parent="1" name="HOMEWORK"/>
+    <schema id="6" parent="1" name="HW2"/>
+    <schema id="7" parent="1" name="imooc_shop"/>
+    <schema id="8" parent="1" name="information_schema"/>
+    <schema id="9" parent="1" name="jacob"/>
+    <schema id="10" parent="1" name="myDB"/>
+    <schema id="11" parent="1" name="mysql"/>
+    <schema id="12" parent="1" name="performance_schema"/>
+    <schema id="13" parent="1" name="productsdb"/>
+    <schema id="14" parent="1" name="request"/>
+    <schema id="15" parent="1" name="RUNOOB"/>
+    <schema id="16" parent="1" name="SailorReserveBoat"/>
+    <schema id="17" parent="1" name="sakila"/>
+    <schema id="18" parent="1" name="SQLStudyGuide"/>
+    <schema id="19" parent="1" name="SQLStudyGuideBank"/>
+    <schema id="20" parent="1" name="sqooptest"/>
+    <schema id="21" parent="1" name="telemed"/>
+    <schema id="22" parent="1" name="telemed1.1"/>
+    <table id="23" parent="2" name="blog"/>
+    <table id="24" parent="2" name="calendar"/>
+    <table id="25" parent="2" name="calendar_share"/>
+    <table id="26" parent="2" name="collection_blog"/>
+    <table id="27" parent="2" name="collection_twitter"/>
+    <table id="28" parent="2" name="relationship"/>
+    <table id="29" parent="2" name="twitter"/>
+    <table id="30" parent="2" name="userinfo"/>
+    <column id="31" parent="23" name="blog_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="32" parent="23" name="title">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="23" name="content">
+      <Position>3</Position>
+      <DataType>varchar(500)|0</DataType>
+    </column>
+    <column id="34" parent="23" name="userinfo_user_id">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="35" parent="23" name="fk_blog_userinfo1_idx">
+      <ColNames>userinfo_user_id</ColNames>
+    </index>
+    <key id="36" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>blog_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="37" parent="23" name="fk_blog_userinfo1">
+      <ColNames>userinfo_user_id</ColNames>
+      <RefSchemaName>Web</RefSchemaName>
+      <RefTableName>userinfo</RefTableName>
+      <RefColNames>user_id</RefColNames>
+    </foreign-key>
+    <column id="38" parent="24" name="cal_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="24" name="start_date">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="24" name="end_date">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="24" name="event_title">
+      <Position>4</Position>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="42" parent="24" name="event_content">
+      <Position>5</Position>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="43" parent="24" name="userinfo_user_id">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="44" parent="24" name="fk_calendar_userinfo1_idx">
+      <ColNames>userinfo_user_id</ColNames>
+    </index>
+    <key id="45" parent="24" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>cal_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="46" parent="24" name="fk_calendar_userinfo1">
+      <ColNames>userinfo_user_id</ColNames>
+      <RefSchemaName>Web</RefSchemaName>
+      <RefTableName>userinfo</RefTableName>
+      <RefColNames>user_id</RefColNames>
+    </foreign-key>
+    <column id="47" parent="25" name="userinfo_user_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="25" name="calendar_cal_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="49" parent="25" name="fk_userinfo_has_calendar_calendar1_idx">
+      <ColNames>calendar_cal_id</ColNames>
+    </index>
+    <index id="50" parent="25" name="fk_userinfo_has_calendar_userinfo1_idx">
+      <ColNames>userinfo_user_id</ColNames>
+    </index>
+    <key id="51" parent="25" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>userinfo_user_id
+calendar_cal_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="52" parent="25" name="fk_userinfo_has_calendar_userinfo1">
+      <ColNames>userinfo_user_id</ColNames>
+      <RefSchemaName>Web</RefSchemaName>
+      <RefTableName>userinfo</RefTableName>
+      <RefColNames>user_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="53" parent="25" name="fk_userinfo_has_calendar_calendar1">
+      <ColNames>calendar_cal_id</ColNames>
+      <RefSchemaName>Web</RefSchemaName>
+      <RefTableName>calendar</RefTableName>
+      <RefColNames>cal_id</RefColNames>
+    </foreign-key>
+    <column id="54" parent="26" name="blog_blog_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="26" name="userinfo_user_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="56" parent="26" name="fk_blog_has_userinfo_blog1_idx">
+      <ColNames>blog_blog_id</ColNames>
+    </index>
+    <index id="57" parent="26" name="fk_blog_has_userinfo_userinfo1_idx">
+      <ColNames>userinfo_user_id</ColNames>
+    </index>
+    <key id="58" parent="26" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>blog_blog_id
+userinfo_user_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="59" parent="26" name="fk_blog_has_userinfo_blog1">
+      <ColNames>blog_blog_id</ColNames>
+      <RefSchemaName>Web</RefSchemaName>
+      <RefTableName>blog</RefTableName>
+      <RefColNames>blog_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="60" parent="26" name="fk_blog_has_userinfo_userinfo1">
+      <ColNames>userinfo_user_id</ColNames>
+      <RefSchemaName>Web</RefSchemaName>
+      <RefTableName>userinfo</RefTableName>
+      <RefColNames>user_id</RefColNames>
+    </foreign-key>
+    <column id="61" parent="27" name="twitter_twitter_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="27" name="userinfo_user_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="63" parent="27" name="fk_twitter_has_userinfo_twitter1_idx">
+      <ColNames>twitter_twitter_id</ColNames>
+    </index>
+    <index id="64" parent="27" name="fk_twitter_has_userinfo_userinfo1_idx">
+      <ColNames>userinfo_user_id</ColNames>
+    </index>
+    <key id="65" parent="27" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>twitter_twitter_id
+userinfo_user_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="66" parent="27" name="fk_twitter_has_userinfo_twitter1">
+      <ColNames>twitter_twitter_id</ColNames>
+      <RefSchemaName>Web</RefSchemaName>
+      <RefTableName>twitter</RefTableName>
+      <RefColNames>twitter_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="67" parent="27" name="fk_twitter_has_userinfo_userinfo1">
+      <ColNames>userinfo_user_id</ColNames>
+      <RefSchemaName>Web</RefSchemaName>
+      <RefTableName>userinfo</RefTableName>
+      <RefColNames>user_id</RefColNames>
+    </foreign-key>
+    <column id="68" parent="28" name="userinfo_user_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="28" name="userinfo_user_id1">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="70" parent="28" name="fk_userinfo_has_userinfo_userinfo1_idx">
+      <ColNames>userinfo_user_id</ColNames>
+    </index>
+    <index id="71" parent="28" name="fk_userinfo_has_userinfo_userinfo2_idx">
+      <ColNames>userinfo_user_id1</ColNames>
+    </index>
+    <key id="72" parent="28" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>userinfo_user_id
+userinfo_user_id1</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="73" parent="28" name="fk_userinfo_has_userinfo_userinfo1">
+      <ColNames>userinfo_user_id</ColNames>
+      <RefSchemaName>Web</RefSchemaName>
+      <RefTableName>userinfo</RefTableName>
+      <RefColNames>user_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="74" parent="28" name="fk_userinfo_has_userinfo_userinfo2">
+      <ColNames>userinfo_user_id1</ColNames>
+      <RefSchemaName>Web</RefSchemaName>
+      <RefTableName>userinfo</RefTableName>
+      <RefColNames>user_id</RefColNames>
+    </foreign-key>
+    <column id="75" parent="29" name="twitter_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="76" parent="29" name="content">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="77" parent="29" name="userinfo_user_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="78" parent="29" name="fk_twitter_userinfo1_idx">
+      <ColNames>userinfo_user_id</ColNames>
+    </index>
+    <key id="79" parent="29" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>twitter_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="80" parent="29" name="fk_twitter_userinfo1">
+      <ColNames>userinfo_user_id</ColNames>
+      <RefSchemaName>Web</RefSchemaName>
+      <RefTableName>userinfo</RefTableName>
+      <RefColNames>user_id</RefColNames>
+    </foreign-key>
+    <column id="81" parent="30" name="user_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="82" parent="30" name="password">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="83" parent="30" name="email">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="84" parent="30" name="name">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="85" parent="30" name="gender">
+      <Position>5</Position>
+      <DataType>enum(&apos;male&apos;, &apos;female&apos;)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="86" parent="30" name="age">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="87" parent="30" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
