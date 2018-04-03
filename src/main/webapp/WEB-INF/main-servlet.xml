@@ -29,14 +29,13 @@
     </bean>
 
     <!-- Configure the data source bean -->
-    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+    <!--<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="${database.driver}"/>
         <property name="url"
                   value="${database.url}"/>
         <property name="username" value="${database.user}"/>
         <property name="password" value="${database.password}"/>
-    </bean>
-    <!--
+    </bean>-->
         <bean class="java.net.URI" id="dbUrl">
             <constructor-arg
                     value="postgres://plnegiqxsuzdij:86989aa640e06f604e5c4f4b2d31cace8211ec85d689f83e63373f1fd01dedad@ec2-54-243-54-6.compute-1.amazonaws.com:5432/d7mj03vo95cjbm"></constructor-arg>
@@ -48,7 +47,6 @@
             <property name="username" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>
             <property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }"/>
         </bean>
-    -->
 
     <!-- Configure the entity manager factory bean -->
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
