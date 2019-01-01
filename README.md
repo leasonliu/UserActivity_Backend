@@ -4,4 +4,4 @@ https://useractivity-frontend.herokuapp.com
 
 login with: user user
 
-Sometimes server sleeps, try login twice.
+Sometimes server sleeps, try login again.
