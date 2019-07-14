@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="MySQL - Web@localhost">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.14">
     <root id="1"/>
     <schema id="2" parent="1" name="Web">
       <Current>1</Current>
@@ -36,22 +36,22 @@
     <table id="30" parent="2" name="userinfo"/>
     <column id="31" parent="23" name="blog_id">
       <Position>1</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="32" parent="23" name="title">
       <Position>2</Position>
-      <DataType>varchar(100)|0</DataType>
+      <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="33" parent="23" name="content">
       <Position>3</Position>
-      <DataType>varchar(500)|0</DataType>
+      <DataType>varchar(500)|0s</DataType>
     </column>
     <column id="34" parent="23" name="userinfo_user_id">
       <Position>4</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="35" parent="23" name="fk_blog_userinfo1_idx">
@@ -70,30 +70,30 @@
     </foreign-key>
     <column id="38" parent="24" name="cal_id">
       <Position>1</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="39" parent="24" name="start_date">
       <Position>2</Position>
-      <DataType>datetime|0</DataType>
+      <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="40" parent="24" name="end_date">
       <Position>3</Position>
-      <DataType>datetime|0</DataType>
+      <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="41" parent="24" name="event_title">
       <Position>4</Position>
-      <DataType>varchar(200)|0</DataType>
+      <DataType>varchar(200)|0s</DataType>
     </column>
     <column id="42" parent="24" name="event_content">
       <Position>5</Position>
-      <DataType>varchar(200)|0</DataType>
+      <DataType>varchar(200)|0s</DataType>
     </column>
     <column id="43" parent="24" name="userinfo_user_id">
       <Position>6</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="44" parent="24" name="fk_calendar_userinfo1_idx">
@@ -112,12 +112,12 @@
     </foreign-key>
     <column id="47" parent="25" name="userinfo_user_id">
       <Position>1</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="48" parent="25" name="calendar_cal_id">
       <Position>2</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="49" parent="25" name="fk_userinfo_has_calendar_calendar1_idx">
@@ -146,12 +146,12 @@ calendar_cal_id</ColNames>
     </foreign-key>
     <column id="54" parent="26" name="blog_blog_id">
       <Position>1</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="55" parent="26" name="userinfo_user_id">
       <Position>2</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="56" parent="26" name="fk_blog_has_userinfo_blog1_idx">
@@ -180,12 +180,12 @@ userinfo_user_id</ColNames>
     </foreign-key>
     <column id="61" parent="27" name="twitter_twitter_id">
       <Position>1</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="62" parent="27" name="userinfo_user_id">
       <Position>2</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="63" parent="27" name="fk_twitter_has_userinfo_twitter1_idx">
@@ -214,12 +214,12 @@ userinfo_user_id</ColNames>
     </foreign-key>
     <column id="68" parent="28" name="userinfo_user_id">
       <Position>1</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="69" parent="28" name="userinfo_user_id1">
       <Position>2</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="70" parent="28" name="fk_userinfo_has_userinfo_userinfo1_idx">
@@ -248,17 +248,17 @@ userinfo_user_id1</ColNames>
     </foreign-key>
     <column id="75" parent="29" name="twitter_id">
       <Position>1</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="76" parent="29" name="content">
       <Position>2</Position>
-      <DataType>varchar(200)|0</DataType>
+      <DataType>varchar(200)|0s</DataType>
     </column>
     <column id="77" parent="29" name="userinfo_user_id">
       <Position>3</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="78" parent="29" name="fk_twitter_userinfo1_idx">
@@ -277,33 +277,33 @@ userinfo_user_id1</ColNames>
     </foreign-key>
     <column id="81" parent="30" name="user_id">
       <Position>1</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="82" parent="30" name="password">
       <Position>2</Position>
-      <DataType>varchar(50)|0</DataType>
+      <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="83" parent="30" name="email">
       <Position>3</Position>
-      <DataType>varchar(100)|0</DataType>
+      <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="84" parent="30" name="name">
       <Position>4</Position>
-      <DataType>varchar(45)|0</DataType>
+      <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="85" parent="30" name="gender">
       <Position>5</Position>
-      <DataType>enum(&apos;male&apos;, &apos;female&apos;)|0</DataType>
+      <DataType>enum(&apos;male&apos;, &apos;female&apos;)|0e</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="86" parent="30" name="age">
       <Position>6</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <key id="87" parent="30" name="PRIMARY">
